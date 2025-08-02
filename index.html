@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: #e8f5e9;
+      background: #fcfcfc;
       margin: 0;
       padding: 40px;
       text-align: center;
@@ -16,88 +16,82 @@
     }
 
     #logo {
-      width: 150px;
-      transform: scale(0);
-      animation: zoomIn 2s forwards;
+      width: 120px;
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
     }
 
-    .plant {
-      background: #fff;
+    .plant-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
       padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-      display: inline-block;
-      text-align: left;
-      max-width: 500px;
-      margin-top: 40px;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: slideUp 1s forwards;
-      animation-delay: 2s;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease-out;
     }
 
-    .plant img {
+    .plant-card img {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      transition: transform 0.5s ease;
+      border-radius: 50%;
+      max-width: 400px;
+      margin-bottom: 20px;
+      animation: zoomIn 1.8s ease-out;
     }
 
-    .plant img:hover {
-      transform: scale(1.05);
-    }
-
-    .plant h2 {
-      margin: 0;
+    h1 {
       font-size: 2em;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.5s;
+      margin-bottom: 10px;
     }
 
-    .plant em {
-      display: block;
-      color: #555;
-      margin-top: 5px;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 2.8s;
+    .taxo {
+      color: #444;
+      font-size: 1em;
+      margin-bottom: 15px;
     }
 
-    .plant p {
-      margin-top: 15px;
-      line-height: 1.5;
-      opacity: 0;
-      animation: fadeIn 1s forwards;
-      animation-delay: 3s;
+    h3 {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #9c5b99;
     }
 
-    @keyframes zoomIn {
-      to { transform: scale(1); }
-    }
-
-    @keyframes slideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    p {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
 <body>
+
+  <div class="plant-card">
+    <img src="white-kaner.png" alt="White Kaner" />
+    <h1>White Kaner (सफेद कनेर)</h1>
+    <div class="taxo">
+      <strong>Genus:</strong> Nerium<br>
+      <strong>Species:</strong> indicum
+    </div>
+
+    <h3>PROPERTIES</h3>
+    <p>
+      White Kaner is traditionally used in Ayurveda for its anti-inflammatory and antimicrobial properties. It is known to help in the treatment of skin diseases and joint pains. However, parts of the plant are toxic if ingested and must be used with caution.
+    </p>
+  </div>
+
   <img id="logo" src="school-logo.png" alt="School Logo" />
 
-  <div class="plant">
-    <img src="white-kaner.png" alt="White Kaner" />
-    <h2>White Kaner (सफेद कनेर)</h2>
-    <em>Nerium indicum</em>
-    <p>Ornamental flowering shrub with fragrant white flowers. Traditionally used in folk medicine with caution due to its toxicity.</p>
-  </div>
 </body>
 </html>
+
